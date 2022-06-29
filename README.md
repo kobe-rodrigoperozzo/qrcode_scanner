@@ -15,22 +15,70 @@ A Flutter QR Code package that makes it simpler for developers to use.
 
 ## Features
 
-Essencially, this package implements methods and widgets using the flutter_qr_code (url) package, making it easier for developers to approach.
+Essentially, this package implements methods and widgets using the [qr_code_scanner](https://pub.dev/packages/qr_code_scanner) package, making it easier for developers to approach, simply returning a String with the read code.
+
+- Navigate to a customizable default or generic QR Code Scanner page, using the ```[...]NavigateAndScan``` methods.
+- Render your own QR Code Scanner page with the ```QrPage``` widget.
 
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Android Integration
+
+Depending on the Android SDK or Gradle version your project is running, you might need to add permission for the app to open the camera. 
+On that case, ddd the following to your ```AndroidManifest.xml``` file:
+
+```<uses-permission android:name="android.permission.CAMERA" />```
+
+
+### iOS Integration
+
+In order to use the camera, add the following to your ```Info.plist``` file:
+
+```
+<key>io.flutter.embedded_views_preview</key>
+<true/>
+<key>NSCameraUsageDescription</key>
+<string>This app needs camera access to scan QR codes</string>
+```
+
+### Adding the package to your Flutter project
+
+Add the following to your ```pubspec.yaml``` file:
+
+```yaml
+qrcode_scanner:
+    git:
+      url: https://github.com/kobe-rodrigoperozzo/qrcode_scanner.git
+```
+
+Now, in your Dart code, import it:
+
+```dart
+import 'package:qrcode_scanner/qrcode_scanner.dart';
+```
+
+And run:
+
+```flutter pub get```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+### defaultNavigateAndScan
+
+Example:
 
 ```dart
-const like = 'sample';
+onPressed: () async {
+                String qrCode = await QrManager().defaultNavigateAndScan(
+                  context: context,
+                  title: 'Rastreio do Cacau',
+                  subtitle: 'Posicione o código QR da embalagem na área destacada abaixo.',
+                  actionText: 'O que é o rastreio do cacau?',
+                );
 ```
+
+![qrcodedengo](https://user-images.githubusercontent.com/102180624/176516213-c96a5ff8-e7ff-4a33-b809-5f71b99e1ccc.gif)
 
 ## Additional information
 
