@@ -79,6 +79,7 @@ onPressed: () async {
 ```
 
 ![qrcodedengo](https://user-images.githubusercontent.com/102180624/176516213-c96a5ff8-e7ff-4a33-b809-5f71b99e1ccc.gif)
+TODO: Fix this gif and add more examples.
 
 ## Additional information
 
