@@ -11,12 +11,12 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter QR Code package that makes it simpler for developers to use.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Essencially, this package implements methods and widgets using the flutter_qr_code (url) package, making it easier for developers to approach.
+
 
 ## Getting started
 
