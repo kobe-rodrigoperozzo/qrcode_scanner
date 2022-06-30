@@ -51,7 +51,10 @@ class QrExample extends StatelessWidget {
               context: context,
               overlayWidget: const Text(
                 'Overlay Widget',
-                style: TextStyle(color: Colors.red, fontSize: 32),
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 32,
+                ),
               ),
             );
             debugPrint(qrCode);
