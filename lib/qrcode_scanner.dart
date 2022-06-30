@@ -113,7 +113,7 @@ class _QrPageState extends State<QrPage> {
             IconButton(
               onPressed: () => Future.delayed(
                 Duration.zero,
-                () => Navigator.of(context).pop(),
+                () => Navigator.of(context).pop(''),
               ),
               icon: const Icon(Icons.close),
             )
