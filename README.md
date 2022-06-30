@@ -107,6 +107,12 @@ ElevatedButton(
 ```
 ![Captura de Tela 2022-06-30 às 13 08 41](https://user-images.githubusercontent.com/102180624/176725908-2609487f-c2b3-4a99-85a0-5dbf565ecdec.png)
 
+## TODO
+There is still a lot of work to be done, and tons of room for improvement.
+Some of them are:
+- Make the GenericPage even more flexible and customizable.
+- Add the QR "square" scanner style options as parameters.
+- Extensively test.
 
 ## Additional information
 
