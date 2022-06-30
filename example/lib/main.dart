@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrcode_scanner/qrcode_scanner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +29,36 @@ class QrExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          onPressed: () async {
+            String qrCode = await QrManager().defaultNavigateAndScan(
+              context: context,
+              title: 'Title',
+              subtitle: 'Subtitle',
+              actionText: 'Action Text',
+              actionFunction: () => debugPrint('Action Function'),
+            );
+            debugPrint(qrCode);
+          },
+          child: const Text('Default Page Scanner'),
+        ),
+        ElevatedButton(
+          onPressed: () async {
+            String qrCode = await QrManager().genericNavigateAndScan(
+              context: context,
+              overlayWidget: const Text(
+                'Overlay Widget',
+                style: TextStyle(color: Colors.red, fontSize: 32),
+              ),
+            );
+            debugPrint(qrCode);
+          },
+          child: const Text('Generic Page Scanner'),
+        ),
+      ],
+    );
   }
 }
