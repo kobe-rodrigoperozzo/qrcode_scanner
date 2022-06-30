@@ -26,7 +26,7 @@ Essentially, this package implements methods and widgets using the [qr_code_scan
 ### Android Integration
 
 Depending on the Android SDK or Gradle version your project is running, you might need to add permission for the app to open the camera. 
-On that case, ddd the following to your ```AndroidManifest.xml``` file:
+On that case, add the following to your ```AndroidManifest.xml``` file:
 
 ```<uses-permission android:name="android.permission.CAMERA" />```
 
