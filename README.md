@@ -70,16 +70,43 @@ Example:
 
 ```dart
 onPressed: () async {
-                String qrCode = await QrManager().defaultNavigateAndScan(
-                  context: context,
-                  title: 'Rastreio do Cacau',
-                  subtitle: 'Posicione o código QR da embalagem na área destacada abaixo.',
-                  actionText: 'O que é o rastreio do cacau?',
-                );
+            String qrCode = await QrManager().defaultNavigateAndScan(
+              context: context,
+              title: 'Title',
+              subtitle: 'Subtitle',
+              actionText: 'Action Text',
+              actionFunction: () => debugPrint('Action Function'),
+            );
 ```
+![Captura de Tela 2022-06-30 às 13 05 31](https://user-images.githubusercontent.com/102180624/176725310-6fa1d86b-f3fc-4615-b54c-49e453c52e28.png)
 
-![qrcodedengo](https://user-images.githubusercontent.com/102180624/176516213-c96a5ff8-e7ff-4a33-b809-5f71b99e1ccc.gif)
-TODO: Fix this gif and add more examples.
+### genericNavigateAndScan
+
+The fundamental idea behind this method is for the developer to be able to pass any widget, as it is stacked on top of the Qr Code Scanner page.
+The passed widget will be placed as such:
+ 1. SafeArea
+ 2. Scaffold
+ 3. Stack
+ 4. __Widget__
+
+Example:
+
+```dart
+ElevatedButton(
+          onPressed: () async {
+            String qrCode = await QrManager().genericNavigateAndScan(
+              context: context,
+              overlayWidget: const Text(
+                'Overlay Widget',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 32,
+                ),
+              ),
+            );
+```
+![Captura de Tela 2022-06-30 às 13 08 41](https://user-images.githubusercontent.com/102180624/176725908-2609487f-c2b3-4a99-85a0-5dbf565ecdec.png)
+
 
 ## Additional information
 
